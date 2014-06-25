@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN“ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/> </head>
+
+<title>Google Maps JavaScript Assignment 3</title> 
+
+<script src="http://maps.google.com/maps?file=api&amp;v=3&amp;" type="text/javascript"></script>
+
+<script type="text/javascript" src="map2.js">
+
+<script type="text/javascript">
+
+    function load() 
+	{
+
+      if (GBrowserIsCompatible())
+
+	 {
+
+        var map = new GMap2(document.getElementById("map"));        
+	geocoder = new GClientGeocoder();
+	geocoder.getLatLng("Melbourne", function(point){map.setCenter(point, 13)}); 
+      }
+    }
+</script>
+
+  <body onload="load()" onunload="GUnload()">
+
+   Street Address : <input id="address" name="address" type="text" size="50"/>  
+  
+    Suburb: <input id="suburb" name="suburb" type="text" size="50"/>
+
+    <input type="button" onClick="getData()" value="Search" />
+
+    <div id="map" style="width: 500px; height: 300px"></div>
+
+    <span id="markerConfirm" />
+
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
